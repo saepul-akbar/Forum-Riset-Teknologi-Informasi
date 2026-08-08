@@ -1,4 +1,4 @@
-import styles from "./Navbar.modules.css"
+import styles from "./Navbar.module.css"
 
 type NavbarProps = {
     brand: string;
