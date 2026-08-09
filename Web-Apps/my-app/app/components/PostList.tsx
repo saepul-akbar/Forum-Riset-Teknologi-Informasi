@@ -9,7 +9,7 @@ export default async function PostList() {
             {posts.map((post) => (
                 <div className="post-item" key={post.id}>
                     <h2>
-                        <Link href="/">
+                        <Link href={`/posts/${post.id}`}>
                             {post.title}
                         </Link>
                     </h2>

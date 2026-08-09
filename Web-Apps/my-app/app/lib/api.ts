@@ -14,21 +14,17 @@ export async function getPosts(): Promise<Post[]> {
         throw new Error("Gagal mengambil data posts");
     }
 
-    const posts: Post[] = await res.json();
-
-    return posts;
+    return res.json();
 }
 
-export async function getPostById(id: number): Promise<Post> {
+export async function getPostById(id: string): Promise<Post> {
     const res = await fetch(
         `https://jsonplaceholder.typicode.com/posts/${id}`
     );
 
     if (!res.ok) {
-        throw new Error("Gagal mengambil data post");
+        throw new Error("Artikel tidak ditemukan");
     }
 
-    const post: Post = await res.json();
-
-    return post;
+    return res.json();
 }
