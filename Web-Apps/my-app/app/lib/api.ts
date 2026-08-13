@@ -28,3 +28,15 @@ export async function getPostById(id: string): Promise<Post> {
 
     return res.json();
 }
+
+export async function getAllPosts(): Promise<Post[]> {
+    const res = await fetch(
+        "https://jsonplaceholder.typicode.com/posts"
+    );
+
+    if (!res.ok) {
+        throw new Error("Gagal mengambil data posts");
+    }
+
+    return res.json();
+}
